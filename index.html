@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Locator Assignment Viewer</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute">
+  <defs>
+    <pattern id="unresolvedHatch" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <line x1="0" y1="0" x2="0" y2="6" stroke="var(--clr-warn,#e09000)" stroke-width="2"/>
+    </pattern>
+  </defs>
+</svg>
+<div id="toast-container" style="position:fixed;top:1rem;right:1rem;z-index:9999;display:flex;flex-direction:column;gap:.5rem;pointer-events:none;"></div>
+<div class="app">
+
+  <div class="top-bar">
+    <div class="app-title">Locator Assignment Viewer</div>
+    <div class="seg" id="runTabs"></div>
+    <div class="seg" id="storeTabs"></div>
+    <div class="top-actions" id="topActions"></div>
+    <input type="file" id="fileInput" accept=".json,.xlsx,.xlsm,application/json,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,application/vnd.ms-excel.sheet.macroEnabled.12" multiple />
+    <input type="file" id="settingsFileInput" accept="application/json" />
+  </div>
+
+  <div class="store-strip" id="storeStrip"></div>
+
+  <div class="main-row">
+    <div class="periods-scroll" id="periodsScroll"></div>
+    <div class="side-stack" id="sideStack" style="display:none;">
+    <div class="side" id="sidePanel" style="display:none;">
+      <div class="panel">
+        <div class="panel-head">
+          <h3>Items in view</h3>
+          <div class="panel-head-actions">
+            <button class="panel-clear" id="resetFilter" title="Clear filter"></button>
+            <button class="panel-move" data-panel="sidePanel" data-dir="-1" title="Move up"></button>
+            <button class="panel-move" data-panel="sidePanel" data-dir="1" title="Move down"></button>
+            <button class="panel-close" id="sidePanelClose" title="Close panel (P)"></button>
+          </div>
+        </div>
+        <div class="hint">Select one or more items to isolate them &mdash; store &amp; locator layout stays visible, only matching assignments are shown. Selection is kept when you switch stores.</div>
+        <div class="legend-list" id="legendList"></div>
+      </div>
+    </div>
+    <div class="side" id="changesPanel" style="display:none;">
+      <div class="panel">
+        <div class="panel-head">
+          <h3>Recent changes</h3>
+          <div class="panel-head-actions">
+            <button class="panel-clear" id="clearChangeLogBtn" title="Clear log"></button>
+            <button class="panel-move" data-panel="changesPanel" data-dir="-1" title="Move up"></button>
+            <button class="panel-move" data-panel="changesPanel" data-dir="1" title="Move down"></button>
+            <button class="panel-close" id="changesPanelClose" title="Close panel (H)"></button>
+          </div>
+        </div>
+        <div class="hint">Manual edits made in this session, newest first.</div>
+        <div class="changes-list" id="changesList"></div>
+      </div>
+    </div>
+    <div class="side" id="infoPanel" style="display:none;">
+      <div class="panel">
+        <div class="panel-head">
+          <h3>Information</h3>
+          <div class="panel-head-actions">
+            <button class="panel-clear" id="clearInfoLogBtn" title="Clear messages"></button>
+            <button class="panel-move" data-panel="infoPanel" data-dir="-1" title="Move up"></button>
+            <button class="panel-move" data-panel="infoPanel" data-dir="1" title="Move down"></button>
+            <button class="panel-close" id="infoPanelClose" title="Close panel (I)"></button>
+          </div>
+        </div>
+        <div class="hint">Errors, warnings, and notices from loading and editing runs.</div>
+        <div class="changes-list" id="infoList"></div>
+      </div>
+      <div class="panel" id="importedHistoryPanel" style="display:none;">
+        <h3 style="margin-bottom:8px;">Imported history</h3>
+        <div class="hint">Change log bundled in the loaded file, from a previous editing session.</div>
+        <div class="changes-list" id="importedHistoryList"></div>
+      </div>
+    </div>
+    </div>
+  </div>
+
+</div>
+
+<div id="modalRoot"></div>
+
+
+<!-- Classic (non-module) scripts sharing one global scope -- this keeps the
+     app working when opened directly as a file:// page. Load order matters:
+     each file after state.js may call functions defined earlier, but nothing
+     actually RUNS until app.js's render() call at the very end, so as long
+     as every file has loaded by then, cross-file references resolve fine. -->
+<script src="js/state.js"></script>
+<script src="js/excel-loader.js"></script>
+<script src="js/drag.js"></script>
+<script src="js/modal.js"></script>
+<script src="js/render.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

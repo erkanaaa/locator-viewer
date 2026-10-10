@@ -1,0 +1,39 @@
+{
+  "runId": "SAMPLE-001",
+  "itemsPerLocator": 2,
+  "periods": [0, 1],
+  "stores": {
+    "s1": {
+      "storeName": "Sample Store 1",
+      "width": 12,
+      "height": 8,
+      "splitHorizontal": true,
+      "locators": [
+        { "locatorCode": "TYPE-A", "locatorName": "Standard bay", "locatorNameCode": "G01", "centerX": 2, "centerY": 2, "width": 2.4, "height": 2 },
+        { "locatorCode": "TYPE-A", "locatorName": "Standard bay", "locatorNameCode": "G02", "centerX": 5, "centerY": 2, "width": 2.4, "height": 2 },
+        { "locatorCode": "TYPE-A", "locatorName": "Standard bay", "locatorNameCode": "G03", "centerX": 8, "centerY": 2, "width": 2.4, "height": 2 },
+        { "locatorCode": "TYPE-A", "locatorName": "Standard bay", "locatorNameCode": "G04", "centerX": 2, "centerY": 5, "width": 2.4, "height": 2 },
+        { "locatorCode": "TYPE-A", "locatorName": "Standard bay", "locatorNameCode": "G05", "centerX": 5, "centerY": 5, "width": 2.4, "height": 2 },
+        { "locatorCode": "TYPE-A", "locatorName": "Standard bay", "locatorNameCode": "G06", "centerX": 8, "centerY": 5, "width": 2.4, "height": 2 }
+      ],
+      "assignments": {
+        "0": [
+          { "LocatorNameCode": "G01", "LocatorPart": 1, "ItemCode": 1001, "ItemDesc": "Carpet Classic Wide3 Red", "ItemDesign": "Classic", "ItemColor": "Red", "BackColor": "#B4483C", "FontColor": "#FFFFFF", "AssignedCapSqm": 4.2 },
+          { "LocatorNameCode": "G01", "LocatorPart": 2, "ItemCode": 1002, "ItemDesc": "Carpet Classic Wide3 Blue", "ItemDesign": "Classic", "ItemColor": "Blue", "BackColor": "#4C6FA6", "FontColor": "#FFFFFF", "AssignedCapSqm": 3.8 },
+          { "LocatorNameCode": "G02", "LocatorPart": 1, "ItemCode": 1003, "ItemDesc": "Carpet Modern Wide4 Beige", "ItemDesign": "Modern", "ItemColor": "Beige", "BackColor": "#C9B48C", "FontColor": "#1F2933", "AssignedCapSqm": 5.1 },
+          { "LocatorNameCode": "G03", "LocatorPart": 1, "ItemCode": 1004, "ItemDesc": "Carpet Modern Wide4 Green", "ItemDesign": "Modern", "ItemColor": "Green", "BackColor": "#5F8C5A", "FontColor": "#FFFFFF", "AssignedCapSqm": 4.6 },
+          { "LocatorNameCode": "G03", "LocatorPart": 2, "ItemCode": 1005, "ItemDesc": "Carpet Deluxe Wide3 Gray", "ItemDesign": "Deluxe", "ItemColor": "Gray", "BackColor": "#5B6672", "FontColor": "#FFFFFF", "AssignedCapSqm": 3.4 },
+          { "LocatorNameCode": "G05", "LocatorPart": 1, "ItemCode": 1006, "ItemDesc": "Carpet Deluxe Wide3 Amber", "ItemDesign": "Deluxe", "ItemColor": "Amber", "BackColor": "#C4862F", "FontColor": "#1F2933", "AssignedCapSqm": 3.9 }
+        ],
+        "1": [
+          { "LocatorNameCode": "G01", "LocatorPart": 1, "ItemCode": 1002, "ItemDesc": "Carpet Classic Wide3 Blue", "ItemDesign": "Classic", "ItemColor": "Blue", "BackColor": "#4C6FA6", "FontColor": "#FFFFFF", "AssignedCapSqm": 3.8 },
+          { "LocatorNameCode": "G01", "LocatorPart": 2, "ItemCode": 1001, "ItemDesc": "Carpet Classic Wide3 Red", "ItemDesign": "Classic", "ItemColor": "Red", "BackColor": "#B4483C", "FontColor": "#FFFFFF", "AssignedCapSqm": 4.2 },
+          { "LocatorNameCode": "G02", "LocatorPart": 1, "ItemCode": 1003, "ItemDesc": "Carpet Modern Wide4 Beige", "ItemDesign": "Modern", "ItemColor": "Beige", "BackColor": "#C9B48C", "FontColor": "#1F2933", "AssignedCapSqm": 5.1 },
+          { "LocatorNameCode": "G02", "LocatorPart": 2, "ItemCode": 1006, "ItemDesc": "Carpet Deluxe Wide3 Amber", "ItemDesign": "Deluxe", "ItemColor": "Amber", "BackColor": "#C4862F", "FontColor": "#1F2933", "AssignedCapSqm": 3.9 },
+          { "LocatorNameCode": "G04", "LocatorPart": 1, "ItemCode": 1004, "ItemDesc": "Carpet Modern Wide4 Green", "ItemDesign": "Modern", "ItemColor": "Green", "BackColor": "#5F8C5A", "FontColor": "#FFFFFF", "AssignedCapSqm": 4.6 },
+          { "LocatorNameCode": "G06", "LocatorPart": 1, "ItemCode": 1005, "ItemDesc": "Carpet Deluxe Wide3 Gray", "ItemDesign": "Deluxe", "ItemColor": "Gray", "BackColor": "#5B6672", "FontColor": "#FFFFFF", "AssignedCapSqm": 3.4 }
+        ]
+      }
+    }
+  }
+}
